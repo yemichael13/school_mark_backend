@@ -8,6 +8,7 @@ const teacherRoutes = require('./routes/teachers');
 const studentRoutes = require('./routes/students');
 const subjectRoutes = require('./routes/subjects');
 const markRoutes = require('./routes/marks');
+const teacherDataRoutes = require('./routes/teacherData');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use('/api/admin/marks', markRoutes);
 
 // Teacher routes
 app.use('/api/teacher/marks', markRoutes);
+app.use('/api/teacher', teacherDataRoutes);
 
 // Legacy routes for backward compatibility
 app.use('/api/teachers', teacherRoutes);
